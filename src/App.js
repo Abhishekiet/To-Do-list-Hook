@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import ReactDOM from 'react-dom';
-import {Button , Typography , Grid} from '@mui/material/'
+import { Typography , Grid} from '@mui/material/'
 import ContainerList from './ContainerList';
 import Header from './Header';
 
@@ -24,7 +23,7 @@ const App=()=>{
       setField("")
     }
     else{
-      List.map( a=> { if(a.id== newid){ a.title = field  }  } )
+      List.map( a=> { if(a.id=== newid){ a.title = field  }  } )
       setList( [...List] )
       setField('')
       setEditFlag(false)
@@ -37,7 +36,7 @@ const App=()=>{
   }
   
   const editHandler=(id)=>{
-    const obj = List.find( a=> a.id== id )
+    const obj = List.find( a=> a.id=== id )
     setField( obj.title )
     setEditFlag( a=> true )
     setNewid( a=> obj.id )
